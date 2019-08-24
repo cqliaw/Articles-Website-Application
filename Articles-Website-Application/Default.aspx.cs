@@ -11,7 +11,11 @@ namespace Articles_Website_Application
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            if(HttpContext.Current.Application["AccessToken"]!= null)
+            {
+                toggleDiv.Visible = true;
+            }
         }
     }
 }

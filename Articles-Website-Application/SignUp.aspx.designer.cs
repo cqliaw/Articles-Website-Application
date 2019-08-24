@@ -10,42 +10,51 @@
 namespace Articles_Website_Application {
     
     
-    public partial class SiteMaster {
+    public partial class SignUp {
         
         /// <summary>
-        /// LoginLink control.
+        /// emailInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor LoginLink;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl emailInput;
         
         /// <summary>
-        /// SignUp control.
+        /// passwordInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor SignUp;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword passwordInput;
         
         /// <summary>
-        /// Welcome control.
+        /// firstNameInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Welcome;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText firstNameInput;
         
         /// <summary>
-        /// MainContent control.
+        /// lastNameInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText lastNameInput;
+        
+        /// <summary>
+        /// signUpButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button signUpButton;
     }
 }
