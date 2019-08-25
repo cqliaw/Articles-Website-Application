@@ -20,12 +20,11 @@ namespace Articles_Website_Application
                 List<UserType> userList = new List<UserType>();
                 List<string> emailList = new List<string>();
 
-                string access_key = "AKIAJ5D7L2Y3C7DWLEKQ";
-                string secret_key = "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";
+                
 
-                BasicAWSCredentials basicAWSCredentials = new BasicAWSCredentials(access_key, secret_key);
+                //BasicAWSCredentials basicAWSCredentials = new BasicAWSCredentials(access_key, secret_key);
 
-                AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient(basicAWSCredentials);
+                //AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient(basicAWSCredentials);
 
                 if (HttpContext.Current.Application["AccessToken"] != null)
                 {
