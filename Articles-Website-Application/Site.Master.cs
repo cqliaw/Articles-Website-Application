@@ -12,20 +12,23 @@ namespace Articles_Website_Application
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            HtmlAnchor logOutAnchor = (HtmlAnchor)Page.Master.FindControl("LogOutAnchor");
+            HtmlAnchor loginAnchor = (HtmlAnchor)Page.Master.FindControl("LoginAnchor");
+            HtmlAnchor signUpAchor = (HtmlAnchor)Page.Master.FindControl("SignUpAnchor");
+
             if (HttpContext.Current.Application["AccessToken"] != null)
             {
-                HtmlAnchor loginAnchor = (HtmlAnchor)(Page.Master.FindControl("LoginLink"));
-                //HtmlAnchor welcomeMessage = (HtmlAnchor)(Page.Master.FindControl("Welcome"));
-                //HtmlAnchor signup = (HtmlAnchor)(Page.Master.FindControl("SignUp"));
-                if (loginAnchor != null)
-                {
-                    loginAnchor.InnerText = "LogOut";
-                    //signup.Style.Add("display", "none");
-                    //welcomeMessage.Style.Add("display", "block");
-                    //welcomeMessage.Style.Add("disabled", "true");
-                    //welcomeMessage.Style.Add("pointer-events", "none");
-                }
-               
+
+                loginAnchor.Style.Add("display", "none");
+                logOutAnchor.Style.Add("display", "block");
+                signUpAchor.Style.Add("display", "none");
+
+            }
+            else
+            {
+                loginAnchor.Style.Add("display", "block");
+                logOutAnchor.Style.Add("display", "none");
+                signUpAchor.Style.Add("display", "block");
             }
         }
     }

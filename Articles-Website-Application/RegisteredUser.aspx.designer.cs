@@ -10,24 +10,15 @@
 namespace Articles_Website_Application {
     
     
-    public partial class _Default {
+    public partial class RegisteredUser {
         
         /// <summary>
-        /// Content control.
+        /// GV1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Content;
-        
-        /// <summary>
-        /// showContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden showContent;
+        protected global::System.Web.UI.WebControls.GridView GV1;
     }
 }

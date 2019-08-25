@@ -30,7 +30,7 @@ namespace Articles_Website_Application
                 Password = passwordInput.Value
             };
 
-            
+
 
             AttributeType emailAttr = new AttributeType();
             emailAttr.Name = "email";
@@ -61,7 +61,7 @@ namespace Articles_Website_Application
                 return false;
             }
         }
-        
+
         protected async void signUpButton_Click(object sender, EventArgs e)
         {
             bool signedUp = await SignUpUser();

@@ -9,15 +9,44 @@ using System.Web;
 using System.Web.Script.Serialization;
 namespace Articles_Website_Application
 {
+    using Amazon.CognitoIdentityProvider.Model;
     using System.Web.UI;
     using System.Web.UI.HtmlControls;
     using System.Web.UI.WebControls;
 
     public partial class Login : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected async void Page_Load(object sender, EventArgs e)
         {
-            
+            try
+
+            {
+                if (("log_out").Equals(Request.QueryString["mode"]))
+                {
+                    if (HttpContext.Current.Application["AccessToken"] != null)
+                    {
+                        AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient(new Amazon.Runtime.AnonymousAWSCredentials());
+                        GlobalSignOutRequest globalSignOutRequest = new GlobalSignOutRequest()
+                        {
+                            AccessToken = HttpContext.Current.Application["AccessToken"].ToString()
+                        };
+                        await provider.GlobalSignOutAsync(globalSignOutRequest);
+                        HttpContext.Current.Application["AccessToken"] = null;
+                        Response.Redirect("Default.aspx");
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "alert('Token not detected');" +
+                           "window.location.href='Login.aspx';", true);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var message = new JavaScriptSerializer().Serialize(ex.Message.ToString());
+                var script = string.Format("alert({0});", message);
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "ex", script, true);
+            }
         }
 
         protected async void loginButton_Click(object sender, EventArgs e)
@@ -26,7 +55,7 @@ namespace Articles_Website_Application
             {
                 string accessToken = await AuthorizeUser();
 
-                if(accessToken != null)
+                if (accessToken != null)
                 {
                     HttpContext.Current.Application["AccessToken"] = accessToken;
 

@@ -13,31 +13,49 @@ namespace Articles_Website_Application {
     public partial class SiteMaster {
         
         /// <summary>
-        /// LoginLink control.
+        /// homeAnchor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor LoginLink;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor homeAnchor;
         
         /// <summary>
-        /// SignUp control.
+        /// RegisteredAnchor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor SignUp;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor RegisteredAnchor;
         
         /// <summary>
-        /// Welcome control.
+        /// LoginAnchor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Welcome;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor LoginAnchor;
+        
+        /// <summary>
+        /// LogOutAnchor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor LogOutAnchor;
+        
+        /// <summary>
+        /// SignUpAnchor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor SignUpAnchor;
         
         /// <summary>
         /// MainContent control.
