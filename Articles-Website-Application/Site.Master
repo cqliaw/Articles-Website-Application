@@ -60,7 +60,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
 
-                       <!-- <li><a runat="server" href="~/RegisteredUser" id="RegisteredAnchor">Registered</a></li>-->
+                        <li><a runat="server" href="~/RegisteredUser" id="RegisteredAnchor">Registered User</a></li>
                         <li><a runat="server" href="~/Login" id="LoginAnchor">Login</a></li>
                         <li><a runat="server" href="~/Login?mode=log_out" id="LogOutAnchor">Logout</a></li>
                         <li><a runat="server" href="~/SignUp" id="SignUpAnchor">Register</a></li>

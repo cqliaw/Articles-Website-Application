@@ -1,6 +1,7 @@
 ﻿using Amazon.CognitoIdentityProvider;
 using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Runtime;
+using Articles_Website_Application.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,16 +19,21 @@ namespace Articles_Website_Application
             if (HttpContext.Current.Application["AccessToken"] != null)
             {
                 List<UserType> userList = new List<UserType>();
-                List<string> emailList = new List<string>();
+                List<AttributeType> attributeList = new List<AttributeType>();
 
-                
 
-                //BasicAWSCredentials basicAWSCredentials = new BasicAWSCredentials(access_key, secret_key);
+                string accessKey = RDSContext.Create().awsCredentials.FirstOrDefault().AccessKey;
+                string secretKey = RDSContext.Create().awsCredentials.FirstOrDefault().SecretKey;
 
-                //AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient(basicAWSCredentials);
+
+                BasicAWSCredentials basicAWSCredentials = new BasicAWSCredentials(accessKey, secretKey);
+
+                AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient(basicAWSCredentials);
 
                 if (HttpContext.Current.Application["AccessToken"] != null)
                 {
+
+
                     ListUsersRequest listUserRequest = new ListUsersRequest
                     {
                         UserPoolId = ConfigurationManager.AppSettings["USERPOOL_ID"],
@@ -39,13 +45,14 @@ namespace Articles_Website_Application
 
                     userList.AddRange(response.Users);
 
-                    foreach(UserType u in userList)
+                    foreach (UserType u in userList)
                     {
-                        //emailList.Add(u.Attributes);
+                        attributeList.AddRange(u.Attributes);
                     }
-
-                    GV1.DataSource = emailList;
+                    
+                    GV1.DataSource = attributeList.Select(t => t.Value);
                     GV1.DataBind();
+                    GV1.HeaderRow.Cells[0].Text = "Email List";
                 }
             }
         }

@@ -15,6 +15,7 @@ namespace Articles_Website_Application
             HtmlAnchor logOutAnchor = (HtmlAnchor)Page.Master.FindControl("LogOutAnchor");
             HtmlAnchor loginAnchor = (HtmlAnchor)Page.Master.FindControl("LoginAnchor");
             HtmlAnchor signUpAchor = (HtmlAnchor)Page.Master.FindControl("SignUpAnchor");
+            HtmlAnchor registeredAnchor = (HtmlAnchor)Page.Master.FindControl("RegisteredAnchor");
 
             if (HttpContext.Current.Application["AccessToken"] != null)
             {
@@ -22,13 +23,14 @@ namespace Articles_Website_Application
                 loginAnchor.Style.Add("display", "none");
                 logOutAnchor.Style.Add("display", "block");
                 signUpAchor.Style.Add("display", "none");
-
+                registeredAnchor.Style.Add("display", "block");
             }
             else
             {
                 loginAnchor.Style.Add("display", "block");
                 logOutAnchor.Style.Add("display", "none");
                 signUpAchor.Style.Add("display", "block");
+                registeredAnchor.Style.Add("display", "none");
             }
         }
     }

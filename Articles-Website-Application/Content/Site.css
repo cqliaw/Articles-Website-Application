@@ -62,6 +62,10 @@ html {
     font-family: proxima-nova, sans-serif;
 }
 
+table{
+    background-color:blue!important;
+}
+
 .logo, .logo img {
     height: 100px;
 }
@@ -192,3 +196,4 @@ footer {
     right: -50%;
     bottom: 5px;
 }
+

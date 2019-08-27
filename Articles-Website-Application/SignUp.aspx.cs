@@ -32,19 +32,25 @@ namespace Articles_Website_Application
 
 
 
-            AttributeType emailAttr = new AttributeType();
-            emailAttr.Name = "email";
-            emailAttr.Value = emailInput.Value;
+            AttributeType emailAttr = new AttributeType
+            {
+                Name = "email",
+                Value = emailInput.Value
+            };
             signUpRequest.UserAttributes.Add(emailAttr);
 
-            AttributeType givenNameAttr = new AttributeType();
-            givenNameAttr.Name = "given_name";
-            givenNameAttr.Value = firstNameInput.Value;
+            AttributeType givenNameAttr = new AttributeType
+            {
+                Name = "given_name",
+                Value = firstNameInput.Value
+            };
             signUpRequest.UserAttributes.Add(givenNameAttr);
 
-            AttributeType familyNameAttr = new AttributeType();
-            familyNameAttr.Name = "family_name";
-            familyNameAttr.Value = lastNameInput.Value;
+            AttributeType familyNameAttr = new AttributeType
+            {
+                Name = "family_name",
+                Value = lastNameInput.Value
+            };
             signUpRequest.UserAttributes.Add(familyNameAttr);
 
             try
